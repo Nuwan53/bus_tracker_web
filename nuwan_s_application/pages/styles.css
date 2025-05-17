@@ -290,7 +290,8 @@ body {
 
 .frame_8 {
   display: block;
-  
+  width: 800px;
+  margin-top: -50px;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -836,9 +837,11 @@ font-weight: bold;
   .text_10 {
     font-size: 20px;
   }
-
+  /* .under_livemap {
+    color: red;
+  } */
   .under_livemap {
-    font-size: 14px;
+    font-size: 100px;
     font-weight: 500;
   }
 
