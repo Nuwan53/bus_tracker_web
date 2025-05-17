@@ -500,9 +500,15 @@ body {
   color: #0078d4; /* primary accent color */
 }
 
+
+
+
 /* Mission heading */
 .frame_9 {
   margin-top: 20px;
+  margin-left: 50px;
+  display: block;
+  
 }
 /* Live map */
 .text_10 {
@@ -515,10 +521,10 @@ body {
 }
 
 /* Mission text */
-.text_11 {
-  font-size: 16px;
+.under_mission {
+  font-size: 15px;
   color: #000000;
-  line-height: 1.6;
+  line-height: 0;
   margin-top: 10px;
   font-weight: 500;
   white-space: pre-line;
@@ -527,30 +533,52 @@ body {
 /* About Us container */
 .frame_12 {
   margin-top: 25px;
+  margin-left: 50px;
+  width: 600px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  
 }
 
 /* About Us headings */
-.text_13 {
+.about_us {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 36px;
   color: #222;
 }
 
-.text_14 {
+.under_about {
   
-font-weight: lighter;
+margin-top: 20px;
+font-weight: bold;
+.text_15 {
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #000000;
+  line-height: 1.2;
+  white-space: pre-line;
+}
   
 }
 
-.text_15 {
-  font-size: 16px;
-  color: #444;
-  line-height: 1.5;
-  white-space: pre-line;
+.hero{
+ display: block;
+  
 }
+.image-section{
+  max-width: 80px;
+  max-height: 80px;
+  display: block;
+  block-size: 20px;
+  height: 10px;
+  width: 10px;
+}
+
+.facetoface{
+  display: flex;
+}
+
 
 /* Contact me heading */
 .text_16 {
@@ -1051,3 +1079,80 @@ font-weight: lighter;
                 gap: 30px;
             }
         }
+
+
+
+        /*contact me section of last page*/
+
+        .frame_contact {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.text_contact_heading {
+  font-size: 32px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.text_contact_subheading {
+  font-size: 20px;
+  color: #555;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.text_contact_description {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  display: block;
+}
+
+.contact_form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form_group {
+  margin-bottom: 20px;
+}
+
+.form_label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form_input,
+.form_textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.form_textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.form_submit {
+  background-color: #fdb503;
+  color: rgb(0, 0, 0);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.form_submit:hover {
+  background-color: #f2bd38;
+}
