@@ -5,13 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RideOnTime</title>
   <link rel="stylesheet" href="styles.css" />
+
+  <script>    
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const page = this.textContent.trim();
+                    let url = '#';
+                    if (page === 'Home') url = 'RideOnTimeBusTrackingHomepage.html';
+                    else if (page === 'Live Map') url = 'second.html';
+                    else if (page === 'Schedule') url = 'third.html';
+                    else if (page === 'About') url = 'fourth.html';
+                    window.location.href = url;
+                });
+            });
+        });
+   
+    </script>>
+
+
 </head>
+
+
 <body><nav class="navbar">
         <a href="#" class="logo">RideOnTime</a>
         <div class="nav-links">
             <a href="#" class="nav-link">Home</a>
             <a href="#" class="nav-link">Live Map</a>
-            <a href="#" class="nav-link">Routes</a>
+            <a href="#" class="nav-link">Schedule</a>
+            <a href="#" class="nav-link">About</a>
         </div>
     </nav>
 
@@ -19,7 +41,7 @@
         <div class="frame_9">
           <span class="text_10">Live Map</span>
         </div>
-        <span class="text_11">
+        <span class="under_livemap">
           Track Buses in Real-Time<br />
           Never guess when your bus will arrive again. Our live map shows the exact location of buses on all active routes. Just zoom in, select your stop, and see which buses are on the way — along with their estimated arrival times.
           <br /><br />
@@ -31,7 +53,7 @@
         </span>
       </div>
 
-    <img src="yellow-city-bus-navigation-icons-600nw-2476109643.webp" class="rectangle_12" alt=" setting" />
+    <img src="istockphoto-1299133253-612x612.png"  />
       <footer class="footer">
         <div class="footer-content">
             <div class="footer-left">

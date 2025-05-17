@@ -4,240 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RideOnTime - Track Your Bus in Real-Time</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', sans-serif;
-        }
-        
-        body {
-            background-color: #ffffff;
-        }
-        
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 80px;
-            background-color: #ffffff;
-            border-bottom: 1px solid #e6e6e6;
-            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
-            
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .logo {
-            font-size: 20px;
-            font-weight: 700;
-            line-height: 25px;
-            color: #000000;
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 40px;
-        }
-        
-        .nav-link {
-            font-size: 20px;
-            font-weight: 500;
-            line-height: 25px;
-            color: #000000;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-link:hover {
-            color: #fdb603;
-        }
-        
-        .hero-section {
-            padding: 60px 80px;
-        }
-        
-        .hero-title {
-            font-size: 64px;
-            font-weight: 700;
-            line-height: 78px;
-            color: #000000;
-            margin-bottom: 20px;
-        }
-        
-        .hero-subtitle {
-            font-size: 24px;
-            font-weight: 400;
-            line-height: 30px;
-            color: rgba(0, 0, 0, 0.75);
-            margin-bottom: 40px;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .cta-button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #fdb603;
-            color: #040000;
-            font-size: 24px;
-            font-weight: 500;
-            line-height: 30px;
-            padding: 23px 32px;
-            border-radius: 8px;
-            text-decoration: none;
-            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        
-        .cta-button:hover {
-            background-color: #e9a800;
-            transform: translateY(-2px);
-        }
-        
-        .cta-button:active {
-            transform: translateY(0);
-        }
-        
-        .bus-image {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            margin: 0 auto;
-        }
-        
-        .footer {
-            background-color: #fdb503;
-            padding: 50px 80px;
-            margin-top: 50px;
-            border-top: 1px solid #e6e6e6;
-        }
-        
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .footer-left {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-        
-        .site-name {
-            font-size: 24px;
-            font-weight: 400;
-            line-height: 30px;
-            color: #000000;
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 8px;
-        }
-        
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            transition: opacity 0.3s ease;
-        }
-        
-        .social-icon:hover {
-            opacity: 0.8;
-        }
-        
-        .footer-links {
-            display: flex;
-            gap: 80px;
-        }
-        
-        .footer-column {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-        
-        .footer-topic {
-            font-size: 16px;
-            font-weight: 500;
-            line-height: 20px;
-            color: #000000;
-        }
-        
-        .footer-page {
-            font-size: 16px;
-            font-weight: 500;
-            line-height: 20px;
-            color: #444444;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-page:hover {
-            color: #000000;
-        }
-        
-        @media (max-width: 1024px) {
-            .hero-title {
-                font-size: 48px;
-                line-height: 58px;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-                gap: 40px;
-            }
-            
-            .footer-links {
-                justify-content: space-between;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 20px 40px;
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .hero-section {
-                padding: 40px;
-            }
-            
-            .hero-title {
-                font-size: 36px;
-                line-height: 44px;
-            }
-            
-            .hero-subtitle {
-                font-size: 20px;
-                line-height: 26px;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .footer {
-                padding: 40px;
-            }
-            
-            .footer-links {
-                flex-direction: column;
-                gap: 30px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
+   
+    <script>    
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const page = this.textContent.trim();
+                    let url = '#';
+                    if (page === 'Home') url = 'RideOnTimeBusTrackingHomepage.html';
+                    else if (page === 'Live Map') url = 'second.html';
+                    else if (page === 'Schedule') url = 'third.html';
+                    else if (page === 'About') url = 'fourth.html';
+                    window.location.href = url;
+                });
+            });
+        });
+   
+    </script>>
+
 </head>
 <body>
     <nav class="navbar">
@@ -245,7 +30,8 @@
         <div class="nav-links">
             <a href="#" class="nav-link">Home</a>
             <a href="#" class="nav-link">Live Map</a>
-            <a href="#" class="nav-link">Routes</a>
+            <a href="#" class="nav-link">Schedule</a>
+            <a href="#" class="nav-link">About</a>
         </div>
     </nav>
     
@@ -298,48 +84,6 @@
         </div>
     </footer>
 
-    <script>
-        // Live Map Button Functionality
-        document.getElementById('live-map-btn').addEventListener('click', function(e) {
-            e.preventDefault();
-            alert('Opening Live Map View...');
-            // In a real application, this would navigate to the live map page
-        });
-        
-        // Schedule Button Functionality
-        document.getElementById('schedule-btn').addEventListener('click', function(e) {
-            e.preventDefault();
-            alert('Opening Bus Schedule...');
-            // In a real application, this would navigate to the schedule page
-        });
-        
-        // Navigation Links Functionality
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const page = this.textContent;
-                alert(`Navigating to ${page} page...`);
-                // In a real application, this would navigate to the respective page
-            });
-        });
-        
-        // Footer Links Functionality
-        document.querySelectorAll('.footer-page').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                alert('Navigating to page...');
-                // In a real application, this would navigate to the respective page
-            });
-        });
-        
-        // Social Media Icons Functionality
-        document.querySelectorAll('.social-icon').forEach((icon, index) => {
-            icon.addEventListener('click', function() {
-                const platforms = ['Facebook', 'LinkedIn', 'YouTube', 'Instagram'];
-                alert(`Opening ${platforms[index]} page...`);
-                // In a real application, this would open the respective social media page
-            });
-        });
-    </script>
+   
 </body>
 </html>

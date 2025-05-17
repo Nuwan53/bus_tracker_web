@@ -5,6 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RideOnTime - About</title>
   <link rel="stylesheet" href="styles.css" />
+
+  <script>    
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const page = this.textContent.trim();
+                    let url = '#';
+                    if (page === 'Home') url = 'RideOnTimeBusTrackingHomepage.html';
+                    else if (page === 'Live Map') url = 'second.html';
+                    else if (page === 'Schedule') url = 'third.html';
+                    else if (page === 'About') url = 'fourth.html';
+                    window.location.href = url;
+                });
+            });
+        });
+   
+    </script>>
+
+
 </head>
 <body>
   <div class="frame_0">
@@ -15,7 +34,8 @@
         <div class="nav-links">
             <a href="#" class="nav-link">Home</a>
             <a href="#" class="nav-link">Live Map</a>
-            <a href="#" class="nav-link">Routes</a>
+            <a href="#" class="nav-link">Schedule</a>
+            <a href="#" class="nav-link">About</a>
         </div>
     </nav>
 
@@ -46,7 +66,7 @@
       </div>
 
       <div class="image-section">
-        <img src="yellow-city-bus-navigation-icons-600nw-2476109643.webp" />
+        <img src="bus-tour-isolated-cartoon-vector-illustrations-happy-friends-summer-city-trip-cultural-experience-leisure-time-together-380490989.webp" />
       </div>
     </div>
       <!-- Contact Section -->
