@@ -41,7 +41,24 @@
         
         <div class="cta-buttons">
             <a href="#" class="cta-button" id="live-map-btn">See Live Map</a>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    document.getElementById('live-map-btn').addEventListener('click', function(e) {
+                        e.preventDefault();
+                        window.location.href = 'second.html';
+                    });
+                });
+            </script>
             <a href="#" class="cta-button" id="schedule-btn">Check Schedule</a>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    document.getElementById('schedule-btn').addEventListener('click', function(e) {
+                        e.preventDefault();
+                        window.location.href = 'third.html';
+                    });
+                });
+                </script>
+            
         </div>
         
         <img src="../assets/images/img_pngcliparttouristbusbuscycling_1.png" alt="Yellow and black bus" class="bus-image">
