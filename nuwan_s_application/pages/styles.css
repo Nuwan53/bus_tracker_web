@@ -63,9 +63,14 @@ body {
 }
 
 .text_10 {
-  font-size: 48px;
+  font-size: 80px;
   font-weight: 700;
   color: #000000;
+  line-height: 100px;
+  margin-bottom: 20px;
+  max-width: 800px;
+ 
+  
 }
 
 .text_11 {
@@ -484,19 +489,23 @@ body {
 .frame_9 {
   margin-top: 20px;
 }
-
+/* Live map */
 .text_10 {
-  font-size: 24px;
+  font-size: 36px;
   font-weight: 700;
-  color: #222;
+  text-align: left;
+  
+  
+  color: #000000;
 }
 
 /* Mission text */
 .text_11 {
   font-size: 16px;
-  color: #444;
+  color: #000000;
   line-height: 1.6;
   margin-top: 10px;
+  font-weight: 500;
   white-space: pre-line;
 }
 
