@@ -6,14 +6,14 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #f4f4f4;
+            background: #fde6ab;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
         }
         .signin-container {
-            background: #bbfdb2;
+            background: #fdb603;
             padding: 32px 24px;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -41,7 +41,7 @@
         .signin-btn {
             width: 100%;
             padding: 10px;
-            background: #0078d4;
+            background: #000000;
             color: #fff;
             border: none;
             border-radius: 4px;
@@ -50,13 +50,13 @@
             margin-top: 10px;
         }
         .signin-btn:hover {
-            background: #005fa3;
+            background: #1d1e1f;
         }
         .signup-link {
             display: block;
             text-align: center;
             margin-top: 16px;
-            color: #0078d4;
+            color: #000000;
             text-decoration: none;
         }
         .signup-link:hover {
@@ -66,19 +66,35 @@
 </head>
 <body>
     <div class="signin-container">
-        <h2>Sign In</h2>
+        <h2>Log In</h2>
         <form>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required autocomplete="username">
+                <input type="email" id="email" name="email" required autocomplete="username" >
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required autocomplete="current-password">
             </div>
-            <button type="submit" class="signin-btn">Sign In</button>
+            <button type="submit" class="signin-btn">Log In</button>
         </form>
         <a href="#" class="signup-link">Don't have an account? Sign up</a>
     </div>
 </body>
 </html>
+<script>
+document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+
+    // Simple validation (replace with real authentication logic)
+    if (email === "user@example.com" && password === "password123") {
+        alert("Sign in successful!");
+        // Redirect or further logic here
+        // window.location.href = "dashboard.html";
+    } else {
+        alert("Invalid email or password.");
+    }
+});
+</script></script>
